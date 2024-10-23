@@ -1,3 +1,5 @@
+import { ClientPageRoot } from "next/dist/client/components/client-page";
+
 const baseUrl = "http://localhost:5000";
 
 //add post function
@@ -52,11 +54,12 @@ export async function delPost(id) {
 }
 
 export async function addCommentToPost(id, commentData) {
-  const response = await fetch(baseUrl + "/posts/" + id, +"/comments", {
+  const response = await fetch(`${baseUrl}/posts/${id}/comments`, {
     method: "POST",
     headers,
     body: JSON.stringify(commentData),
   });
   const PostWithAddedComment = await response.json();
+  console.log([PostWithAddedComment]);
   return PostWithAddedComment;
 }
