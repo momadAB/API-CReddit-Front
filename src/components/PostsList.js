@@ -5,7 +5,6 @@ function PostsList({ posts }) {
   return (
     <div className="grid grid-cols-4 gap-20 p-8">
       {posts.map((post) => {
-        // return <PostCard key={post.id} post={post} />;
         return <PostCard key={post.id} post={post} />;
       })}
     </div>

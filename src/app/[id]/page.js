@@ -2,13 +2,18 @@
 
 import { fetchPostById } from "@/actions/actions";
 import PostDetail from "@/components/PostDetail";
+import { redirect } from "next/navigation";
+
 import React from "react";
 
 async function page(props) {
   const params = await props.params;
   const post = await fetchPostById(params.id);
 
-  return <PostDetail params={params} post={post} />;
+  try {
+    if (post.message.includes("not found")) redirect("/");
+  } catch {}
+  return <PostDetail params={params} post={post} postId={params.id} />;
 }
 
 export default page;

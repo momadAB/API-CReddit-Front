@@ -55,7 +55,6 @@ export async function addCommentToPost(id, commentData) {
     body: JSON.stringify(commentData),
   });
   const PostWithAddedComment = await response.json();
-  console.log([PostWithAddedComment]);
   return PostWithAddedComment;
 }
 

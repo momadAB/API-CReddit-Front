@@ -4,13 +4,15 @@ import React from "react";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-function CommentsList({ comments }) {
+function CommentsList({ comments, postId }) {
   return (
     <div>
-      {comments.map((comment) => (
-        <Comment key={comment.id} commentData={comment} />
-      ))}
-      <CommentForm />
+      <div className="flex flex-col-reverse">
+        {comments.map((comment) => (
+          <Comment key={comment.id} commentData={comment} />
+        ))}
+      </div>
+      <CommentForm postId={postId} />
     </div>
   );
 }
