@@ -44,11 +44,6 @@ export async function delPost(id) {
     headers,
   });
 
-  // Check if the response is okay
-  // if (!response.ok) {
-  //   throw new Error(`Failed to delete post: ${response.statusText}`);
-  // }
-
   const newPost = await response.json();
   return newPost;
 }
@@ -62,4 +57,12 @@ export async function addCommentToPost(id, commentData) {
   const PostWithAddedComment = await response.json();
   console.log([PostWithAddedComment]);
   return PostWithAddedComment;
+}
+
+export async function deleteCommentToPost(id) {
+  const response = await fetch(`${baseUrl}/posts/comments/${id}`, {
+    method: "DELETE",
+  });
+
+  const PostWithDeletedComment = await response.json();
 }
