@@ -1,15 +1,14 @@
-
-import { fetchUserData } from "./actions";
+import { fetchPostById, fetchUserData } from "../actions/actions";
 import PostsList from "@/components/PostsList";
-import posts from "@/data/Posts";
 
 export default async function Home() {
-  const Data = await fetchUserData();
+  const posts = await fetchUserData();
+  const post = await fetchPostById(posts[0].id);
 
   return (
     <div>
-      <pre>{JSON.stringify(Data, null, 2)}</pre>
- <PostsList posts={posts}></PostsList>
+      <pre>{JSON.stringify(post, null, 2)}</pre>
+      <PostsList posts={posts}></PostsList>
     </div>
   );
 }
