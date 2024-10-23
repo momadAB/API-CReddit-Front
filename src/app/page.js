@@ -27,7 +27,6 @@ export default async function Home() {
 
   return (
     <div>
-      <pre>{JSON.stringify(post, null, 2)}</pre>
       <PostsList posts={posts}></PostsList>
       {/* <PostsList posts={newPost}></PostsList> */}
     </div>

@@ -26,11 +26,11 @@ export async function fetchPostById(id) {
   return post;
 }
 
-export async function addPost(Post) {
+export async function addPost(post) {
   const response = await fetch(baseUrl + "/posts/", {
     method: "POST",
     headers,
-    body: JSON.stringify(Post),
+    body: JSON.stringify(post),
   });
   const newPost = await response.json();
   return newPost;
