@@ -1,3 +1,5 @@
+// "use client";
+
 import { fetchPostById } from "@/actions/actions";
 import PostDetail from "@/components/PostDetail";
 import React from "react";
