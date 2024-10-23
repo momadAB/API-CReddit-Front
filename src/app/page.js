@@ -1,4 +1,5 @@
 import { fetchPostById, fetchUserData } from "../actions/actions";
+
 import PostsList from "@/components/PostsList";
 
 export default async function Home() {
