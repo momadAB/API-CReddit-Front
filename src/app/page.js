@@ -1,4 +1,5 @@
 import {
+  addCommentToPost,
   addPost,
   delPost,
   fetchPostById,
@@ -18,6 +19,11 @@ export default async function Home() {
   // await addPost(postObject);
 
   // await delPost(posts[0].id);
+
+  await addCommentToPost("63edbc1c-b8af-45e0-890f-3607d3799a73", {
+    title: post.title,
+    comments: "This is a comment",
+  });
 
   return (
     <div>
