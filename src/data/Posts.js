@@ -3,7 +3,13 @@ const posts = [
     id: 1,
     title: "First Post",
     description: "This is the description of the first post.",
-    comments: [],
+    comments: [
+      {
+        id: 123,
+        username: "Dude",
+        comment: "This is my first comment.",
+      },
+    ],
   },
   {
     id: 2,
