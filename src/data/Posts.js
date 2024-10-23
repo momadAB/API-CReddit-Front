@@ -9,6 +9,11 @@ const posts = [
         username: "Dude",
         comment: "This is my first comment.",
       },
+      {
+        id: 1234,
+        username: "Foud",
+        comment: "This is also my first comment.",
+      },
     ],
   },
   {

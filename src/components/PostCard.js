@@ -1,11 +1,13 @@
+import Link from "next/link";
 import React from "react";
 
 function PostCard({ post }) {
-  const { title, description } = post;
+  const { title, description, id } = post;
   const comments = [];
   return (
-    <div
+    <Link
       className="h-56 text-center"
+      href={`/${id}`}
       // onClick={}
     >
       <p className="text-sm">R: {comments.length}</p>
@@ -14,7 +16,7 @@ function PostCard({ post }) {
         <p>:</p>
       </div>
       <p>{description}</p>
-    </div>
+    </Link>
   );
 }
 

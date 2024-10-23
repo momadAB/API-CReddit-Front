@@ -4,9 +4,12 @@ function Comment({ commentData }) {
   const { comment, username, id } = commentData;
   return (
     <div className="bg-cyan-900 m-4">
-      <p className="p-1 pl-2">
-        {username} {id}
-      </p>
+      <div className="flex">
+        <p className="p-1 pl-2">{username}</p>
+        <p className="p-1 pr-2 ml-auto cursor-pointer ">
+          No. {id} (Click to reply)
+        </p>
+      </div>
 
       <p className="p-4">{comment}</p>
     </div>
