@@ -1,5 +1,5 @@
+"use server";
 import { ClientPageRoot } from "next/dist/client/components/client-page";
-
 const baseUrl = "http://localhost:5000";
 
 //add post function
@@ -62,6 +62,7 @@ export async function deleteCommentToPost(id) {
   const response = await fetch(`${baseUrl}/posts/comments/${id}`, {
     method: "DELETE",
   });
+  console.log(response);
 
   const PostWithDeletedComment = await response.json();
 }

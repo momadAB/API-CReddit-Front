@@ -1,4 +1,5 @@
 "use client";
+import { deleteCommentToPost } from "@/actions/actions";
 import replyToPost from "@/helpers/replyToPost";
 import React from "react";
 
@@ -16,7 +17,7 @@ function Comment({ commentData }) {
         </p>
         <p
           className="font-bold text-[#508878] pl-6 pt-3 pr-4 cursor-pointer"
-          // onClick={}
+          onClick={() => deleteCommentToPost(id)}
         >
           Delete Comment
         </p>

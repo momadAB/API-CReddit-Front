@@ -21,12 +21,10 @@ export default async function Home() {
 
   // await delPost(posts[0].id);
 
-  await addCommentToPost(post.id, {
-    username: post.title,
-    comment: "This is a comment",
-  });
-
-  await deleteCommentToPost("82b7afd5-76a4-40f3-9828-c4f23367bfa4");
+  // await addCommentToPost(post.id, {
+  //   username: post.title,
+  //   comment: "This is a comment",
+  // });
 
   return (
     <div>
