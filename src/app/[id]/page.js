@@ -10,8 +10,9 @@ async function page(props) {
   const params = await props.params;
   const post = await fetchPostById(params.id);
 
-  if (post.message.includes("not found")) redirect("/");
-
+  try {
+    if (post.message.includes("not found")) redirect("/");
+  } catch {}
   return <PostDetail params={params} post={post} postId={params.id} />;
 }
 

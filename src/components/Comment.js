@@ -9,10 +9,16 @@ function Comment({ commentData }) {
       <div className="flex">
         <p className="font-bold text-[#508878] pl-6 pt-3">{username}</p>
         <p
-          className="p-1 pr-2 ml-auto cursor-pointer"
+          className="p-1 pr-2 ml-auto cursor-pointer pt-3"
           onClick={() => replyToPost(id)}
         >
           No. {id} (Click to reply)
+        </p>
+        <p
+          className="font-bold text-[#508878] pl-6 pt-3 pr-4 cursor-pointer"
+          // onClick={}
+        >
+          Delete Comment
         </p>
       </div>
 

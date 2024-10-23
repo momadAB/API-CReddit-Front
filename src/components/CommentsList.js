@@ -7,9 +7,11 @@ import CommentForm from "./CommentForm";
 function CommentsList({ comments, postId }) {
   return (
     <div>
-      {comments.map((comment) => (
-        <Comment key={comment.id} commentData={comment} />
-      ))}
+      <div className="flex flex-col-reverse">
+        {comments.map((comment) => (
+          <Comment key={comment.id} commentData={comment} />
+        ))}
+      </div>
       <CommentForm postId={postId} />
     </div>
   );
