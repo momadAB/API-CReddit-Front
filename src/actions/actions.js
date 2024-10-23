@@ -1,3 +1,5 @@
+import { ClientPageRoot } from "next/dist/client/components/client-page";
+
 const baseUrl = "http://localhost:5000";
 
 //add post function
@@ -6,7 +8,7 @@ headers.append("Content-Type", "application/json");
 
 export async function fetchUserData() {
   // Fetch user information from JSONPlaceholder API
-  const response = await fetch(baseUrl + "/posts", { method: "GEt" });
+  const response = await fetch(baseUrl + "/posts", { method: "GET" });
 
   // Convert response to JSON
   const data = await response.json();
@@ -49,4 +51,15 @@ export async function delPost(id) {
 
   const newPost = await response.json();
   return newPost;
+}
+
+export async function addCommentToPost(id, commentData) {
+  const response = await fetch(`${baseUrl}/posts/${id}/comments`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(commentData),
+  });
+  const PostWithAddedComment = await response.json();
+  console.log([PostWithAddedComment]);
+  return PostWithAddedComment;
 }
