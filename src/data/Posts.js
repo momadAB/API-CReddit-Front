@@ -1,3 +1,5 @@
+import { fetchUserData } from "@/actions/actions";
+
 const posts = [
   {
     id: 1,
@@ -31,3 +33,4 @@ const posts = [
 ];
 
 export default posts;
+
