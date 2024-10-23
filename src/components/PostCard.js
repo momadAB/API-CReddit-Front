@@ -1,8 +1,8 @@
 import React from "react";
 
 function PostCard({ post }) {
-  const { title, description, comments } = post;
-
+  const { title, description } = post;
+  const comments = [];
   return (
     <div
       className="h-56 text-center"
