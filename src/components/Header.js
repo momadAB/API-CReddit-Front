@@ -20,18 +20,23 @@ function Header() {
         </p>
         <p>]</p>
       </div>
-      <form action="" id={formId} className="flex flex-col gap-2 font-black">
-        <input type="text" defaultValue="Username" className="m-52 mt-0 mb-0" />
+      <form
+        action=""
+        id={formId}
+        className="flex flex-col gap-2 font-black hidden"
+      >
+        <input type="text" placeholder="Username" className="m-52 mt-0 mb-0" />
         <input
           type="text"
-          defaultValue="Post Title"
+          placeholder="Post Title"
           className="m-52 mt-0 mb-0"
         />
         <input
           type="text"
-          defaultValue="Post text"
+          placeholder="Post text"
           className="m-52 mb-0 mt-0 h-32"
         />
+        <button type="submit">Submit</button>
       </form>
       {/* Catalog */}
       <div className="flex pl-6">
