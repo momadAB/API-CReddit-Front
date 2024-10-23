@@ -4,7 +4,7 @@ import React from "react";
 import CommentsList from "./CommentsList";
 import replyToPost from "@/helpers/replyToPost";
 
-function PostDetail({ post }) {
+function PostDetail({ post, postId }) {
   const { title, description, comments, id } = post;
   return (
     <div>
@@ -22,7 +22,7 @@ function PostDetail({ post }) {
         <p className="pl-6">{description}</p>
       </div>
       {/* Comments */}
-      <CommentsList comments={comments} postId={id} />
+      <CommentsList comments={comments} postId={postId} />
     </div>
   );
 }

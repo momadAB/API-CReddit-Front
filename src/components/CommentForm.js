@@ -1,9 +1,16 @@
-import React from "react";
+import submitComment from "@/helpers/submitComment";
+import submitPost from "@/helpers/submitPost";
 
 function CommentForm({ postId }) {
   return (
     <form
-      action=""
+      onSubmit={(e) => {
+        e.preventDefault();
+        submitComment(postId, {
+          username: e.target.username.value,
+          comment: e.target.comment.value,
+        });
+      }}
       id="comment-form-id"
       className="flex flex-col gap-2 font-black mt-10"
     >
@@ -11,7 +18,7 @@ function CommentForm({ postId }) {
         type="text"
         name="username"
         placeholder="Username"
-        value="Anonymous"
+        defaultValue="Anonymous"
         className="m-52 mt-0 mb-0 p-3"
       />
       <input
